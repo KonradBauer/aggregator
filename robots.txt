@@ -1,0 +1,6 @@
+# MKCRAFT - wszystkie crawlery (w tym AI: GPTBot, ClaudeBot,
+# PerplexityBot, Google-Extended) maja pelny dostep.
+User-agent: *
+Allow: /
+
+Sitemap: https://mkcraft.com.pl/sitemap.xml

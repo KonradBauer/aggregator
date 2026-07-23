@@ -1,0 +1,14 @@
+# MKCRAFT
+
+> MKCRAFT to grupa trzech polskich marek usługowo-produkcyjnych. Hasło grupy: "Łączymy specjalistów". Strona mkcraft.com.pl jest bramką prowadzącą do stron poszczególnych marek.
+
+## Marki
+
+- [MCraft](https://mcraft.com.pl): nadzór spawalniczy oraz konstrukcje i elementy stalowe. Właściciel: Michał Macherzyński.
+- [KCraft](https://kcraft.com.pl): wyposażenie produkcyjne i transport.
+- MK GYM: wyposażenie siłowni (strona w przygotowaniu).
+
+## Fakty
+
+- Język strony: polski.
+- Typ strony: bramka / strona-portal grupy marek, jedna podstrona.

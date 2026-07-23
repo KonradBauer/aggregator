@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 125%;
+  src: url(data:font/woff2;base64,{FONT_LATIN}) format("woff2");
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 256px; height: 256px; overflow: hidden; }
+body {
+  background: #0f1013;
+  font-family: "Archivo", sans-serif;
+  font-stretch: 125%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.mk {
+  font-size: 118px;
+  line-height: 1;
+  font-weight: 900;
+  color: #eceae5;
+  letter-spacing: 0.01em;
+}
+.bar { width: 96px; height: 14px; background: #ef5a24; }
+</style>
+</head>
+<body>
+  <div class="mk">MK</div>
+  <div class="bar"></div>
+</body>
+</html>

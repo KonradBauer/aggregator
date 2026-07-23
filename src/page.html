@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="MKCRAFT, grupa trzech marek: MK GYM (wyposażenie siłowni), MCraft (nadzór spawalniczy, konstrukcje stalowe) i KCraft (wyposażenie produkcyjne, transport).">
+<title>MKCRAFT | Łączymy specjalistów</title>
+<link rel="canonical" href="https://mkcraft.com.pl/">
+<link rel="icon" type="image/png" href="data:image/png;base64,{FAVICON}">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0f1013">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mkcraft.com.pl/">
+<meta property="og:site_name" content="MKCRAFT">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="MKCRAFT | Łączymy specjalistów">
+<meta property="og:description" content="Grupa trzech marek: MK GYM (wyposażenie siłowni), MCraft (nadzór spawalniczy, konstrukcje stalowe) i KCraft (wyposażenie produkcyjne, transport).">
+<meta property="og:image" content="https://mkcraft.com.pl/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="MKCRAFT, łączymy specjalistów: MK GYM, MCraft, KCraft">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MKCRAFT | Łączymy specjalistów">
+<meta name="twitter:description" content="Grupa trzech marek: MK GYM, MCraft i KCraft.">
+<meta name="twitter:image" content="https://mkcraft.com.pl/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mkcraft.com.pl/#org",
+      "name": "MKCRAFT",
+      "url": "https://mkcraft.com.pl/",
+      "logo": "https://mkcraft.com.pl/apple-touch-icon.png",
+      "slogan": "Łączymy specjalistów",
+      "description": "Grupa trzech marek: MK GYM (wyposażenie siłowni), MCraft (nadzór spawalniczy, konstrukcje i elementy stalowe) i KCraft (wyposażenie produkcyjne, transport).",
+      "subOrganization": [
+        {
+          "@type": "Organization",
+          "name": "MK GYM",
+          "description": "Wyposażenie siłowni"
+        },
+        {
+          "@type": "Organization",
+          "name": "MCraft",
+          "url": "https://mcraft.com.pl",
+          "description": "Nadzór spawalniczy, konstrukcje i elementy stalowe"
+        },
+        {
+          "@type": "Organization",
+          "name": "KCraft",
+          "url": "https://kcraft.com.pl",
+          "description": "Wyposażenie produkcyjne i transport"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mkcraft.com.pl/#website",
+      "name": "MKCRAFT",
+      "url": "https://mkcraft.com.pl/",
+      "inLanguage": "pl-PL",
+      "publisher": { "@id": "https://mkcraft.com.pl/#org" }
+    }
+  ]
+}
+</script>
+<style>
+/* Archivo variable (wght 100-900, wdth 125) - self-hosted, embedded */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 125%;
+  font-display: swap;
+  src: url(data:font/woff2;base64,{FONT_LATINEXT}) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 125%;
+  font-display: swap;
+  src: url(data:font/woff2;base64,{FONT_LATIN}) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* zimna stal + jeden goracy akcent (spawalniczy pomarancz) */
+  --bg: #0f1013;
+  --line: rgba(236, 234, 229, 0.10);
+  --line-strong: rgba(236, 234, 229, 0.22);
+  --ink: #eceae5;        /* kosc, zgodna z kolorem logotypow */
+  --ink-dim: #7d838b;    /* stal przygaszona */
+  --ink-mute: #a6abb1;
+  --acc: #ef5a24;        /* burnt orange */
+  /* z-index scale: 1 tresc wiersza, 2 focus, 60 grain */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  font-stretch: 125%;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ---------- header ---------- */
+
+.top {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  height: 68px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+
+.top__brand {
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.top__tag {
+  font-weight: 350;
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--line-strong);
+}
+
+/* ---------- rows ---------- */
+
+.rows {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.row {
+  /* rozmiar i odsuniecie znaku marki; padding-right wiersza liczony z tych
+     zmiennych, wiec tekst nigdy nie wchodzi pod znak */
+  --mark-size: 180px;
+  --mark-right: clamp(1.5rem, 5vw, 4.5rem);
+  position: relative;
+  flex: 1;
+  min-height: 176px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  outline: none;
+}
+
+.row + .row { border-top: 1px solid var(--line); }
+
+/* schodkowe wciecia (desktop): kompozycja diagonalna */
+.row__in {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+  padding-right: calc(var(--mark-size) + var(--mark-right) + 1.5rem);
+}
+
+/* poswiata akcentu przy prawej krawedzi, widoczna na hover */
+.row::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 130% at 88% 50%, rgba(239, 90, 36, 0.13), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.row__text { min-width: 0; }
+
+.row__name {
+  font-size: clamp(2.6rem, 8.5vw, 7.5rem);
+  font-weight: 250;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  transition: color 0.35s ease;
+}
+
+.row__name b { font-weight: 900; }
+
+/* podkreslenie akcentem, rosnie od lewej */
+.row__bar {
+  display: block;
+  width: min(9rem, 30%);
+  height: 3px;
+  margin-top: 0.85rem;
+  background: var(--acc);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.row__desc {
+  margin-top: 0.8rem;
+  font-weight: 400;
+  font-size: clamp(0.82rem, 1.1vw, 0.98rem);
+  color: var(--ink-dim);
+  transition: color 0.35s ease;
+}
+
+/* ---------- znak marki po prawej ---------- */
+
+.row__mark {
+  position: absolute;
+  right: var(--mark-right);
+  top: 50%;
+  height: min(var(--mark-size), 68%);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%) translateX(3rem);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.row__mark img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* KCraft: prosty znak geometryczny (obrocony kwadrat + litera), spojny z kostka MCraft */
+.kmark {
+  width: 76%;
+  height: 76%;
+  border: 2px solid var(--ink);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kmark span {
+  transform: rotate(-45deg);
+  font-weight: 900;
+  font-size: clamp(2rem, 6vh, 4rem);
+  color: var(--ink);
+  line-height: 1;
+}
+
+/* ---------- strzalka (zlozona z prymitywow CSS) ---------- */
+
+.row__go {
+  margin-left: auto;
+  flex: none;
+  position: relative;
+  width: 3.25rem;
+  height: 1px;
+  background: var(--ink-dim);
+  transition: background-color 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.row__go::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-top: 1px solid var(--ink-dim);
+  border-right: 1px solid var(--ink-dim);
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: center;
+  transition: border-color 0.35s ease;
+}
+
+/* ---------- hover / focus ---------- */
+
+.row:hover::after,
+.row:focus-visible::after { opacity: 1; }
+
+.row:hover .row__name,
+.row:focus-visible .row__name { color: var(--ink); }
+
+.row:hover .row__bar,
+.row:focus-visible .row__bar { transform: scaleX(1); }
+
+.row:hover .row__desc,
+.row:focus-visible .row__desc { color: var(--ink-mute); }
+
+.row:hover .row__mark,
+.row:focus-visible .row__mark {
+  opacity: 0.92;
+  transform: translateY(-50%) translateX(0);
+}
+
+.row:hover .row__go,
+.row:focus-visible .row__go {
+  background: var(--acc);
+  transform: translateX(0.6rem);
+}
+
+.row:hover .row__go::after,
+.row:focus-visible .row__go::after {
+  border-color: var(--acc);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: -4px;
+  z-index: 2;
+}
+
+.row:active .row__in { transform: scale(0.995); }
+
+/* ---------- schodkowanie na szerokich ekranach ---------- */
+
+@media (min-width: 1024px) {
+  .row--mid .row__in { padding-left: 13vw; }
+  .row--last .row__in { padding-left: 23vw; }
+}
+
+@media (max-width: 1023px) {
+  .row { --mark-size: 132px; }
+}
+
+/* ---------- urzadzenia dotykowe: znaki widoczne na stale ---------- */
+
+@media (hover: none) {
+  .row__name { color: var(--ink); }
+  .row__desc { color: var(--ink-mute); }
+  .row__mark {
+    opacity: 0.35;
+    transform: translateY(-50%) translateX(0);
+  }
+  .row__bar { display: none; }
+  .row__go { display: none; }
+}
+
+@media (max-width: 640px) {
+  .row { --mark-size: 88px; --mark-right: 1rem; }
+  .top__tag { font-size: 0.78rem; }
+  .row__go { display: none; }
+  .row__name { white-space: normal; }
+}
+
+/* ---------- grain (staly overlay, poza scrollem) ---------- */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- wejscie (tylko bez preferencji ograniczenia ruchu) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .top { animation: in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .row { animation: in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .row:nth-child(1) { animation-delay: 0.08s; }
+  .row:nth-child(2) { animation-delay: 0.17s; }
+  .row:nth-child(3) { animation-delay: 0.26s; }
+  @keyframes in {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1 class="top__brand">MKCRAFT</h1>
+  <span class="top__tag">Łączymy specjalistów</span>
+</header>
+
+<main class="rows">
+
+  <a class="row" href="#mk-gym" aria-label="MK GYM, wyposażenie siłowni">
+    <!-- TODO: zdjecie hali / strefy wolnych ciezarow, poziome ok. 1920x640,
+         jako row__photo pod row__in (duotone: grayscale + multiply --bg) -->
+    <div class="row__in">
+      <div class="row__text">
+        <h2 class="row__name">MK&nbsp;<b>GYM</b></h2>
+        <span class="row__bar" aria-hidden="true"></span>
+        <p class="row__desc">Wyposażenie siłowni</p>
+      </div>
+      <span class="row__go" aria-hidden="true"></span>
+    </div>
+    <div class="row__mark" aria-hidden="true">
+      <img src="data:image/png;base64,{LOGO_GYM}" alt="">
+    </div>
+  </a>
+
+  <a class="row row--mid" href="https://mcraft.com.pl" aria-label="MCraft, nadzór spawalniczy oraz konstrukcje i elementy stalowe">
+    <!-- TODO: zdjecie spawania / konstrukcji stalowej, poziome ok. 1920x640 -->
+    <div class="row__in">
+      <div class="row__text">
+        <h2 class="row__name">M<b>CRAFT</b></h2>
+        <span class="row__bar" aria-hidden="true"></span>
+        <p class="row__desc">Nadzór spawalniczy · Konstrukcje i elementy stalowe</p>
+      </div>
+      <span class="row__go" aria-hidden="true"></span>
+    </div>
+    <div class="row__mark" aria-hidden="true">
+      <img src="data:image/png;base64,{LOGO_MCRAFT}" alt="">
+    </div>
+  </a>
+
+  <a class="row row--last" href="https://kcraft.com.pl" aria-label="KCraft, wyposażenie produkcyjne i transport">
+    <!-- TODO: zdjecie hali produkcyjnej / transportu, poziome ok. 1920x640 -->
+    <div class="row__in">
+      <div class="row__text">
+        <h2 class="row__name">K<b>CRAFT</b></h2>
+        <span class="row__bar" aria-hidden="true"></span>
+        <p class="row__desc">Wyposażenie produkcyjne · Transport</p>
+      </div>
+      <span class="row__go" aria-hidden="true"></span>
+    </div>
+    <div class="row__mark" aria-hidden="true">
+      <div class="kmark"><span>K</span></div>
+    </div>
+  </a>
+
+</main>
+
+<div class="grain" aria-hidden="true"></div>
+
+</body>
+</html>
