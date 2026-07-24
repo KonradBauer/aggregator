@@ -13,6 +13,15 @@ ROOT = os.path.dirname(SRC)
 ASSETS = os.path.join(SRC, "assets")
 OUT = os.path.join(ROOT, "index.html")
 
+# TODO: uzupelnic prawdziwymi danymi przed publikacja (stopka, sekcja kontakt)
+LEGAL_NAME = "MKCRAFT"
+PHONE = "+48000000000"
+PHONE_DISPLAY = "+48 000 000 000"
+EMAIL = "kontakt@mkcraft.com.pl"
+ADDRESS_STREET = "ul. Przykladowa 1"
+ADDRESS_POSTAL = "00-000"
+ADDRESS_CITY = "Miasto"
+
 
 def b64(fn):
     with open(os.path.join(ASSETS, fn), "rb") as f:
@@ -26,6 +35,13 @@ def main():
     tpl = tpl.replace("{LOGO_GYM}", b64("mkgym-logo.png"))
     tpl = tpl.replace("{LOGO_MCRAFT}", b64("mcraft-logo.png"))
     tpl = tpl.replace("{FAVICON}", b64("favicon-64.png"))
+    tpl = tpl.replace("{LEGAL_NAME}", LEGAL_NAME)
+    tpl = tpl.replace("{PHONE_DISPLAY}", PHONE_DISPLAY)
+    tpl = tpl.replace("{PHONE}", PHONE)
+    tpl = tpl.replace("{EMAIL}", EMAIL)
+    tpl = tpl.replace("{ADDRESS_STREET}", ADDRESS_STREET)
+    tpl = tpl.replace("{ADDRESS_POSTAL}", ADDRESS_POSTAL)
+    tpl = tpl.replace("{ADDRESS_CITY}", ADDRESS_CITY)
     io.open(OUT, "w", encoding="utf-8", newline="\n").write(tpl)
     print("written", OUT, len(tpl) // 1024, "KB")
 
