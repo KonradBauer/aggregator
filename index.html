@@ -234,6 +234,10 @@ body {
   white-space: normal;
 }
 
+.row--gym .row__name {
+  font-size: clamp(2.2rem, 6.5vw, 5.8rem);
+}
+
 /* podkreslenie akcentem, rosnie od lewej */
 .row__bar {
   position: relative;
@@ -586,14 +590,14 @@ a.foot__line:hover { color: var(--ink); }
 
 <main class="rows">
 
-  <a class="row" href=https://mcraft.com.pl/mk-gym aria-label="MK GYM, wyposażenie siłowni">
+  <a class="row row--gym" href=https://mcraft.com.pl/mk-gym aria-label="MK GYM, wyposażenie siłowni">
     <!-- TODO: zdjecie hali / strefy wolnych ciezarow, poziome ok. 1920x640,
          jako row__photo pod row__in (duotone: grayscale + multiply --bg) -->
     <div class="row__in">
       <div class="row__text">
         <h2 class="row__name">MK&nbsp;<b>GYM</b></h2>
         <span class="row__bar" aria-hidden="true"></span>
-        <p class="row__desc">Wyposażenie siłowni</p>
+        <p class="row__desc">Projektujemy i wykonujemy sprzęt dla siłowni domowych, studiów treningowych i obiektów komercyjnych. Specjalizujemy się w stalowych hantlach stałych, które możemy dopasować pod względem zakresu ciężarów, uchwytów, oznaczeń, wykończenia i dedykowanego stojaka.</p>
       </div>
       <span class="row__go" aria-hidden="true"></span>
     </div>
