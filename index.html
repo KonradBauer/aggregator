@@ -109,7 +109,14 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  /* blacha perforowana: otwory w szachownice, kazdy z ciemnym wnetrzem i
+     jasnym rantem (efekt wytloczenia), plus przetarcie szczotkowanej stali */
+  background:
+    repeating-linear-gradient(115deg, rgba(236, 234, 229, 0.03) 0 1px, transparent 1px 4px),
+    radial-gradient(circle at 35% 35%, rgba(236, 234, 229, 0.16) 0 1px, rgba(0, 0, 0, 0.65) 1px 2.1px, transparent 2.3px) 0 0 / 20px 20px,
+    radial-gradient(circle at 35% 35%, rgba(236, 234, 229, 0.16) 0 1px, rgba(0, 0, 0, 0.65) 1px 2.1px, transparent 2.3px) 10px 10px / 20px 20px,
+    radial-gradient(ellipse 70% 45% at 15% -5%, rgba(236, 234, 229, 0.07), transparent 60%),
+    var(--bg);
   color: var(--ink);
   font-family: "Archivo", system-ui, sans-serif;
   font-stretch: 125%;
@@ -120,6 +127,7 @@ body {
 /* ---------- header ---------- */
 
 .top {
+  position: relative;
   display: flex;
   align-items: baseline;
   gap: 1.25rem;
@@ -128,6 +136,17 @@ body {
   align-items: center;
   border-bottom: 1px solid var(--line);
   flex: none;
+}
+
+/* rant blachy: rzad nitow wzdluz dolnej krawedzi headera */
+.top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--line-strong) 0 2px, transparent 2px 28px);
 }
 
 .top__brand {
@@ -217,6 +236,7 @@ body {
 
 /* podkreslenie akcentem, rosnie od lewej */
 .row__bar {
+  position: relative;
   display: block;
   width: min(9rem, 30%);
   height: 3px;
@@ -225,6 +245,41 @@ body {
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* iskra spawalnicza na koncu podkreslenia, wystrzeliwuje przy hover */
+.row__bar::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--acc);
+  opacity: 0;
+  transform: translateY(-50%) scale(0.4);
+}
+
+.row:hover .row__bar::after,
+.row:focus-visible .row__bar::after {
+  opacity: 1;
+  animation: spark 0.6s ease-out;
+}
+
+@keyframes spark {
+  0% {
+    box-shadow: 0 0 6px 2px rgba(239, 90, 36, 1), 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent;
+    transform: translateY(-50%) scale(0.3);
+  }
+  45% {
+    box-shadow: 0 0 5px 1px rgba(239, 90, 36, 0.9), 8px -6px 0 -1px rgba(239, 90, 36, 0.75), -7px -4px 0 -1px rgba(239, 90, 36, 0.7), 6px 5px 0 -1px rgba(239, 90, 36, 0.65);
+    transform: translateY(-50%) scale(1);
+  }
+  100% {
+    box-shadow: 0 0 3px 1px rgba(239, 90, 36, 0.6), 11px -9px 0 -1px transparent, -10px -6px 0 -1px transparent, 9px 8px 0 -1px transparent;
+    transform: translateY(-50%) scale(1);
+  }
 }
 
 .row__desc {
@@ -369,10 +424,22 @@ body {
 /* ---------- stopka ---------- */
 
 .foot {
+  position: relative;
   flex: none;
   border-top: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.015);
   padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 3rem) 1.6rem;
+}
+
+/* rant blachy: rzad nitow wzdluz gornej krawedzi stopki */
+.foot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--line-strong) 0 2px, transparent 2px 28px);
 }
 
 .foot__grid {
